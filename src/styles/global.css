@@ -7,12 +7,18 @@ html {
 }
 
 .blog-article,
+.index-article,
 section[aria-labelledby="blog-heading"] {
   max-width: 80ch;
   margin-inline: auto;
   padding: 0 1rem;
   border: 1px solid #0b0c0c;
   background-color: #ffffff; /* article background */
+}
+
+.blog-listing {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .prose img {
@@ -58,6 +64,34 @@ a:hover,
 a:focus {
   color: #003078;
   text-decoration: none;
+}
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+}
+
+.prose caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid #000;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.prose thead th {
+  background-color: #f3f2f1; /* light grey, high contrast */
+}
+
+.prose tbody tr:nth-child(even) {
+  background-color: #fafafa; /* zebra striping */
 }
 
 /* Focus state for accessibility */

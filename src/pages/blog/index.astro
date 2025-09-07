@@ -19,23 +19,27 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <Header />
-    <main>
+    <mai id="main">
       <section aria-labelledby="blog-heading">
         <h1 id="blog-heading">Latest Posts</h1>
-        <ul>
+        <ul
+          style="list-style-type: none; padding: 1rem; border: 1px solid black;"
+        >
           {
             posts.map((post) => (
               <li>
-                <article>
+                <article class="blog-listing">
                   <header>
-                    <h3>
+                    <h2>
                       <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-                    </h3>
+                    </h2>
                     <p class="date">
                       <time datetime={post.data.pubDate.toISOString()}>
                         <FormattedDate date={post.data.pubDate} />
                       </time>
                     </p>
+
+                    {post.data.description && <p>{post.data.description}</p>}
                   </header>
                   {post.data.heroImage && (
                     <a href={`/blog/${post.id}/`}>
@@ -52,7 +56,7 @@ const posts = (await getCollection("blog")).sort(
           }
         </ul>
       </section>
-    </main>
+    </mai>
     <Footer />
   </body>
 </html>

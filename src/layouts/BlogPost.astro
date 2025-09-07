@@ -18,7 +18,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
   <body>
     <Header />
-    <main>
+    <main id="main">
       <article class="blog-article">
         <header>
           <h1>{title}</h1>
@@ -40,11 +40,13 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
           {
             heroImage && (
               <div class="hero-image">
-                <Image
-                  src={heroImage}
-                  alt=""
-                  style="width: 100%; height: auto; max-width: 600px; margin-inline: auto; display: block;"
-                />
+                <figure>
+                  <Image
+                    src={heroImage}
+                    alt=""
+                    style="width: 100%; height: auto; max-width: 600px; margin-inline: auto; display: block;"
+                  />
+                </figure>
               </div>
             )
           }
