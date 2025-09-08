@@ -31,7 +31,9 @@ const posts = (await getCollection("blog")).sort(
                 <article class="blog-listing">
                   <header>
                     <h2>
-                      <a href={`/blog/${post.id}/`}>{post.data.title}</a>
+                      <a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`}>
+                        {post.data.title}
+                      </a>
                     </h2>
                     <p class="date">
                       <time datetime={post.data.pubDate.toISOString()}>
@@ -42,7 +44,7 @@ const posts = (await getCollection("blog")).sort(
                     {post.data.description && <p>{post.data.description}</p>}
                   </header>
                   {post.data.heroImage && (
-                    <a href={`/blog/${post.id}/`}>
+                    <a href={`${import.meta.env.BASE_URL}/blog/${post.id}/`}>
                       <Image
                         style="width: 100%; height: auto; max-width: 600px; margin-inline: auto; display: block;"
                         src={post.data.heroImage}

@@ -6,7 +6,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://adjash.github.io/Adams-Musings",
+  site: "https://adjash.github.io/",
   base: "/Adams-Musings",
   integrations: [mdx(), sitemap()],
 });
